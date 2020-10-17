@@ -83,6 +83,17 @@ Start-UDDashboard -Port 1000 -AutoReload -Dashboard (
                  } -DateFormatCalendar "MMMM yyyy" -CloseOnSelect $true -showPopperArrow $true -showYearDropdown $true -showMonthDropdown $true -startOpen $false -inline $true -fixedHeight $true
             } -AutoRefresh
 ```
+ Then to read the values, you could either use the `$Session:Selected` which will only hold the value if the user has changed it, or if the user hasn't changed the date, then read it directly from the state of the component via the attributes. Like so
+ ```
+                 New-UDButton -Text "Toast" -OnClick {
+                    Show-UDToast -Message "OnChange Selected:- $Session:Selected" -Position topLeft -Duration 4000
+                    $val = (Get-UDElement -id "Picker").Attributes.startDate
+                    $val2date = $val.Substring(0,24)
+                    $valis = (Get-Date $val2date).ToString("dd/MM/yyyy HH:mm")
+                    Show-UDToast -Message "The default is $valis" -Position topLeft -Duration 4000
+                }
+ ```
+ As the JavaScript date held in the state is not recognised as a valid date, I am using the **SubString** method to read the first 25 characters as that is all I am interested in passing to Powershell to process as the date. I hope these examples makes sense, and any issues, drop me a shout on the UD forum 
 
 ## Also
 
