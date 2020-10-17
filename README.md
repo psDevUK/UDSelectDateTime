@@ -10,11 +10,33 @@ but would also allow you to select the time. Both things built into one componen
 * **showPreviousMonths** - Is set to false by default but would allow you to open the calendar to display previous months
 * **monthsShown** - Is defaulted to 1 but changing this number would display the amount of calendar months, and if you select true on **showPreviousMonths** then this will show previous months with the amount this value is set at
 * **timeFormat** - This is defaulted to HH:mm please see documentation on website for more information
-* **dateFormat** - Is defaulted to MMMM d, yyyy h:mm aa please see documentation on website for more informaiton
+* **dateFormat** - Is defaulted to MMMM d, yyyy h:mm  please see documentation on website for more informaiton
+
+# I have now updated this component
+ 
+ I had a request to allow the user to specify the start date.  Whilst I was at it, I noticed some other handy parameters I could add. So please see the 11 additional things I done to upgrade this component
+ 
+* **-StartDate** allows you to define the initial date shown on the calendat to stop it defaulting to current date time
+* **-Placeholder** you can now specify a string to be displayed when the date has been cleared
+* **classname** a dedicated classname of **udSelectDateTime** has been added to allow custom CSS styling
+* **-shouldCloseOnSelect** is a boolean set to $false to determine if the calendar should automatic close after date and time selection
+* **-dateFormatCalendar** is a string value to determine how the calendar displays the month and year it is showing
+* **-showPopperArrow** is a boolean value set to $true to determine if the calendar should have a pooper arrow or not
+* **-showYearDropdown** is a boolean value to allow you to show a year drop down menu in the calendar for quick year selection
+* **-showMonthDropdown** same as above but for the month names
+* **-startOpen** a boolean value to determine if the calendar should show without the user clicking in the field area
+* **-fixedHeight** boolean value to detemrine if you should keep a fixed height on the calendar
+* **-inline** also a boolean value, setting this to true, will only ever show the calendar and not the text field
 
 ## Example Using The Component
 
-```
+```dateFormatCalendar** is a string value to determine how the calendar displays the month and year it is showing
+* **-showPopperArrow** is a boolean value set to $true to determine if the calendar should have a pooper arrow or not
+* **-showYearDropdown** is a boolean value to allow you to show a year drop down menu in the calendar for quick year selection
+* **-showMonthDropdown** same as above but for the month names
+* **-startOpen** a boolean value to determine if the calendar should show without the user clicking in the field area
+* **-fixedHeight** boolean value to detemrine if you should keep a fixed height on the calendar
+* **-inline** also a boolean value, setting this to true, will only ever show the calendar and not the text field
 Import-Module -Name UniversalDashboard
 Import-Module -Name UniversalDashboard.UDSelectDateTime
 Get-UDDashboard | Stop-UDDashboard
@@ -56,3 +78,17 @@ Start-UDDashboard -Port 1000 -AutoReload -Dashboard (
 
 )
 ```
+
+# Demo with new parameters
+
+```
+ New-UdColumn -Size 3 -Endpoint {
+           $future = (get-date).AddDays(4).AddHours(3).AddMinutes(15)
+           $Exclude = (get-date).AddDays(-3)
+                New-UDSelectDateTime -Id "Picker" -StartDate $future -TimeIntervals 5 -WeekNumbers $true -Clearable $true  -OnChange {
+                     $Session:Selected = $eventData
+                 } -DateFormatCalendar "MMMM yyyy" -CloseOnSelect $true -showPopperArrow $true -showYearDropdown $true -showMonthDropdown $true -startOpen $false -inline $true -fixedHeight $true
+            } -AutoRefresh
+```
+
+
