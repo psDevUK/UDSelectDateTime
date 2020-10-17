@@ -16,7 +16,7 @@ but would also allow you to select the time. Both things built into one componen
  
  I had a request to allow the user to specify the start date.  Whilst I was at it, I noticed some other handy parameters I could add. So please see the 11 additional things I done to upgrade this component
  
-* **-StartDate** allows you to define the initial date shown on the calendat to stop it defaulting to current date time
+* **-StartDate** allows you to define the initial date shown on the calendar to stop it defaulting to current date time
 * **-Placeholder** you can now specify a string to be displayed when the date has been cleared
 * **classname** a dedicated classname of **udSelectDateTime** has been added to allow custom CSS styling
 * **-shouldCloseOnSelect** is a boolean set to $false to determine if the calendar should automatic close after date and time selection
