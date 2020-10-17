@@ -29,14 +29,7 @@ but would also allow you to select the time. Both things built into one componen
 * **-inline** also a boolean value, setting this to true, will only ever show the calendar and not the text field
 
 ## Example Using The Component
-
-```dateFormatCalendar** is a string value to determine how the calendar displays the month and year it is showing
-* **-showPopperArrow** is a boolean value set to $true to determine if the calendar should have a pooper arrow or not
-* **-showYearDropdown** is a boolean value to allow you to show a year drop down menu in the calendar for quick year selection
-* **-showMonthDropdown** same as above but for the month names
-* **-startOpen** a boolean value to determine if the calendar should show without the user clicking in the field area
-* **-fixedHeight** boolean value to detemrine if you should keep a fixed height on the calendar
-* **-inline** also a boolean value, setting this to true, will only ever show the calendar and not the text field
+```
 Import-Module -Name UniversalDashboard
 Import-Module -Name UniversalDashboard.UDSelectDateTime
 Get-UDDashboard | Stop-UDDashboard
