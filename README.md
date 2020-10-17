@@ -8,7 +8,7 @@ but would also allow you to select the time. Both things built into one componen
 * **Clearable** - Boolean option allowing you to add a mini clear button to the component defaulted to true
 * **WeekNumbers** - This will show the current week numbers in the calendar display defaulted to true
 * **showPreviousMonths** - Is set to false by default but would allow you to open the calendar to display previous months
-* **monthsShown** - Is defaulted to 1 but changing this number would display the amount of calendar months, and if you select true on **showPreviousMonths** then this will show previous months with the amount this value is set at
+* **monthsShown** - Is defaulted to 1 but changing this number would display the amount of calendar months, and if you select true on 
 * **timeFormat** - This is defaulted to HH:mm please see documentation on website for more information
 * **dateFormat** - Is defaulted to MMMM d, yyyy h:mm  please see documentation on website for more informaiton
 
