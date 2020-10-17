@@ -91,4 +91,6 @@ Start-UDDashboard -Port 1000 -AutoReload -Dashboard (
             } -AutoRefresh
 ```
 
+## Also
 
+  As I am from the United Kingdom I fixed the locale issue and this is now defaulted to enGB sorry I do not know how to dynamically change this, but if you are from another country really wanting this in your home language I am more than happy to make it happen and release a language specific component for you 
